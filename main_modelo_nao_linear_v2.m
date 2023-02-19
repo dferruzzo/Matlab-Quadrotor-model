@@ -12,7 +12,7 @@ Iyy = 1e-2;
 Izz = 1.8e-2;
 Ir = 1e-3;
 Omega_r = 0;
-% Transformação U1,...,U4 -> freq. angulares dos motores
+% Transformaï¿½ï¿½o U1,...,U4 -> freq. angulares dos motores
 kf = 1.4793*10^(-7); % constante de empuxo
 km = 2.4656*10^(-9); % constante de torque
 L = 0.2;
@@ -26,14 +26,14 @@ T_inv = T^(-1);
 Kp = 0.9182;    % ganho
 tau_a = 0.0569; % polo
 tau_s = 0.0452; % atraso de transporte
-% sem limitação dos motores por enquanto 08/11/2022
+% sem limitaï¿½ï¿½o dos motores por enquanto 08/11/2022
 %rpm_max = 15400;
 %rpm_min = 8700;
-% inlcuir dinâmica dos motores?
-% -1 NÃO
+% inlcuir dinï¿½mica dos motores?
+% -1 Nï¿½O
 % 1  SIM
 incluir_din_motor = -1;
-%% Condições iniciais
+%% Condiï¿½ï¿½es iniciais
 % CondiÃ§Ãµes iniciais p,q,r
 p0 = 0;
 q0 = 0;
@@ -73,7 +73,7 @@ B(6,1) = 1/m;
 B(7,2) = 1/Ixx;
 B(8,3) = 1/Iyy;
 B(9,4) = 1/Izz;
-% A dinâ¢mica Rotacional linear completa
+% A dinï¿½mica Rotacional linear completa
 % --------------------------------------
 A22 = A(7:12,7:12);
 B22 = B(7:12,2:4);
@@ -81,20 +81,20 @@ B22 = B(7:12,2:4);
 % tem que ser 6
 disp('Controlabilidade do sistema (A22,B22)');
 disp(rank(ctrb(A22,B22)));
-% dinêmica rotacional no corpo w = (p,q,r)
+% dinï¿½mica rotacional no corpo w = (p,q,r)
 Aw = A22(1:3,1:3);
 Bw = B22(1:3,1:3);
 Cw = eye(3);
 Dw = zeros(3);
-disp('Controlabilidade da dinâmica (Aw,Bw)')
+disp('Controlabilidade da dinï¿½mica (Aw,Bw)')
 disp(rank(ctrb(Aw,Bw)));
-%% controlador PID dinâmica translacional
+%% controlador PID dinï¿½mica translacional
 % sintonizado com Matlab Tunning toolbox
 Kp_trans = 2.0968;%0.4;%0.5;
 Ki_trans = 0.41774;%0.06;
 Kd_trans = -0.13723;%0.002;
 N_trans = 5.5815;%100;
-%% Controlador LQR para a dinâmica rotacional
+%% Controlador LQR para a dinï¿½mica rotacional
 q11 = 1;
 q22 = 1;
 q33 = 1;
@@ -107,12 +107,12 @@ r22 = 1;
 r33 = 1;
 R = diag([r11,r22,r33]);
 [K,S,E] = lqr(A22,B22,Q,R);
-%% Controlador PID para a dinâmica rotacional
+%% Controlador PID para a dinï¿½mica rotacional
 Kp_rot = 10;
 Ki_rot = 1.0;
 Kd_rot = 0.01;
 N_rot = 100;
-% Selecionar controle para a dinâmica rotacional
+% Selecionar controle para a dinï¿½mica rotacional
 % 1 para controle LQR
 % -1 para controle PID
 select_controlador = -1;
