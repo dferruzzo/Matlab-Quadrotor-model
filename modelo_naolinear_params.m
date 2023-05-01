@@ -25,7 +25,7 @@ T_inv = T^(-1);
 Kp = 0.9182;    % ganho
 tau_a = 0.0569; % polo
 tau_s = 0.0452; % atraso de transporte
-feed_forward_motor = 2.0;
+feed_forward_motor = 0.5;
 % sem limitação dos motores por enquanto
 %rpm_max = 15400;
 %rpm_min = 8700;
@@ -99,4 +99,4 @@ Ki_trans = 0.41774;%0.06;
 Kd_trans = -0.13723;%0.002;
 N_trans = 5.5815;%100;
 %% roda o modelo simulink
-T_sim = 60;
+T_sim = 100;
