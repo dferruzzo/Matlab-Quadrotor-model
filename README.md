@@ -10,12 +10,12 @@ O modelo implementado é o seguinte:
 ```math
 \begin{align}
     \begin{split}
-		\dot{\bm{\xi}}&=\bm{v}\\
-		\dot{\bm{v}}&= -[0~0~{g}]^T+(1/m){\mathbf{R}}_B^I[0~0~{T}_b]^T\\
-		\dot{\bm{\omega}}&=\bm{I}^{-1}\left(\bm{M}-\bm{\omega}\times{\bm{I}}\bm{\omega}\right)\\
-		\dot{\bm{\eta}}&=\bm{\mathcal{W}}{\bm{\omega}}
+		\dot{{\xi}}&=v\\
+		\dot{v}&= -[0~0~{g}]^T+(1/m){{R}}_B^I[0~0~{T}_b]^T\\
+		\dot{\omega}&=I^{-1}\left({M}-{\omega}\times{{I}}{\omega}\right)\\
+		\dot{{\eta}}&={\mathcal{W}}{{\omega}}
     \end{split}    
 \end{align}   
 ```
-onde $\bm{\xi}=(x,y,z)$ representa a posição do veículo no referencial inercial e $\bm{v}=(v_x,v_y,v_z)$ representa a velocidade translacional. O vetor $\bm{\omega}=(p,q,r)$ é a velocidade angular e $\bm{\eta}=(\phi, \theta, \psi)$ são os ângulos de Euler.
+onde ${\xi}=(x,y,z)$ representa a posição do veículo no referencial inercial e ${v}=(v_x,v_y,v_z)$ representa a velocidade translacional. O vetor ${\omega}=(p,q,r)$ é a velocidade angular e ${\eta}=(\phi, \theta, \psi)$ são os ângulos de Euler.
 
