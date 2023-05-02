@@ -27,7 +27,6 @@ T_inv = T^(-1);
 Kp = 0.9182;    % ganho
 tau_a = 0.0569; % polo
 tau_s = 0.045; % atraso de transporte
-feed_forward_motor = 0;%0.5;
 % sem limitação dos motores por enquanto
 %rpm_max = 15400;
 %rpm_min = 8700;
