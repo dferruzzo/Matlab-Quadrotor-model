@@ -77,13 +77,13 @@ B22 = B(7:12,2:4);
 C = [zeros(3) eye(3)]; % a saída são os ângulos de Euler (phi, theta, psi)
 D = zeros(3);
 % O LQT - Linear Quadratic Tracking controller
-q11 = 1;
-q22 = 1;
-q33 = 1;
+q11 = 0.5;
+q22 = 0.5;
+q33 = 0.5;
 Q = diag([q11,q22,q33]);
-r11 = 1;
-r22 = 1;
-r33 = 1;
+r11 = 2;
+r22 = 2;
+r33 = 2;
 R = diag([r11,r22,r33]);
 % A solução da equação algébrica de Ricatti
 K = are(A22, B22*inv(R)*B22',C'*Q*C);
@@ -96,7 +96,7 @@ Kd_rot = 0.01;
 N_rot = 100;
 %% controlador PID dinâmica translacional
 % sintonizado com Matlab Tunning toolbox
-Kp_trans = 2.0968;%0.4;%0.5;
-Ki_trans = 0.4;%0.41774;%0.06;
-Kd_trans = -0.70;%-0.13723;%0.002;
-N_trans = 5.5815;%100;
+Kp_trans = 2.0968;
+Ki_trans = 0.4;
+Kd_trans = -0.13723;
+N_trans = 5.5815;
