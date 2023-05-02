@@ -3,8 +3,10 @@
 clear;
 close all;
 %%
+dt = 1e-3;   % passo de integração
+T_sim = 100; % Tempo de simulação
 % carregas as constantes do sistema
-% Parametros da simulação
+% Parametros do modelo
 g = 9.8;            % aceleração da gravedade
 m = 1.0428;         % massa total do veículo
 Ixx = 1e-2;
@@ -24,7 +26,7 @@ T_inv = T^(-1);
 %% Modelo dos motores 
 Kp = 0.9182;    % ganho
 tau_a = 0.0569; % polo
-tau_s = 0.0452; % atraso de transporte
+tau_s = 0.045; % atraso de transporte
 feed_forward_motor = 0.5;
 % sem limitação dos motores por enquanto
 %rpm_max = 15400;
@@ -98,5 +100,3 @@ Kp_trans = 2.0968;%0.4;%0.5;
 Ki_trans = 0.41774;%0.06;
 Kd_trans = -0.13723;%0.002;
 N_trans = 5.5815;%100;
-%% roda o modelo simulink
-T_sim = 100;
