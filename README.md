@@ -1,7 +1,7 @@
 # Modelagem e Controle nãolinear do Quadrirrotor em Matlab-Simulink
 Matlab 9.4.0.813654 (R2018a)
 
-![Imagem_simulink](modelo_drone.png)
+![Imagem_simulink](figures/modelo_drone.png)
 
 ## Modelo não linear 1
 O modelo Simulink `UAV_naolinear.slx` e o arquivo `modelo_naolinear_params.m` representam a modelagem de um veículo aéreo não tripulado tipo VANT quadrirrotor.
