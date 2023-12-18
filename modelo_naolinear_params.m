@@ -51,6 +51,10 @@ vz0 = 0;
 x0 = 0;
 y0 = 0;
 z0 = 1;
+%% Seleciona controlador da dinâmica rotacional
+%  1 : PDI
+% -1 : LQR
+seleciona_controlador = -1;
 %% sistema linear completo
 A = zeros(12);
 A(1,2) = 1;
