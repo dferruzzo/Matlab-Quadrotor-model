@@ -5,7 +5,7 @@ close all;
 %% seletor de entrada
 % 1     gerador de sinais
 % -1    joystick
-input_selector = -1;
+input_selector = 1;
 %%
 dt = 1e-3;   % passo de integração
 T_sim = 100; % Tempo de simulação
