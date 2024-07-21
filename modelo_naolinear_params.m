@@ -2,10 +2,6 @@
 % ------------------------------
 clear;
 close all;
-%% seletor de entrada
-% 1     gerador de sinais
-% -1    joystick
-input_selector = 1;
 %%
 dt = 1e-3;   % passo de integração
 T_sim = 100; % Tempo de simulação
@@ -28,6 +24,8 @@ T = [kf,kf,kf,kf;
      -km,km,-km,km];
 T_inv = T^(-1);
 %% Modelo dos motores 
+% A dinâmica dos motores não está funcionando.
+% Manter desabilitado
 Kp = 0.9182;    % ganho
 tau_a = 0.0569; % polo
 tau_s = 0.045; % atraso de transporte
@@ -35,9 +33,9 @@ tau_s = 0.045; % atraso de transporte
 %rpm_max = 15400;
 %rpm_min = 8700;
 % inlcuir dinâmica dos motores?
-% -1 NÃO
-% 1  SIM
-incluir_din_motor = 1;
+% 0 NÃO
+% 1 SIM
+incluir_din_motor = 0;
 %% Condições iniciais
 % Condições iniciais p,q,r
 p0 = 0;
@@ -101,9 +99,25 @@ Kp_rot = 10;
 Ki_rot = 1.0;
 Kd_rot = 0.01;
 N_rot = 100;
+%% controlador Kp de posição
+Kpx = 0.25;
+Kpy = 0.5;
+Kpz = 0.5;
 %% controlador PID dinâmica translacional
 % sintonizado com Matlab Tunning toolbox
-Kp_trans = 2.0968;
+Kp_trans = 0.25;%2.0968;
 Ki_trans = 0.4;
 Kd_trans = -0.13723;
 N_trans = 5.5815;
+%% Waypoints
+waypoints = [0,0,5; % x
+             0,0,0; % y
+             0,10,10; % z
+             0,0,0; % phi
+             0,0,0; % theta
+             0,0,0  % psi  
+             ];
+timepoints = [0;
+              1;
+              5];
+
